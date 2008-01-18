@@ -23,6 +23,7 @@ BuildRoot:	%{_tmppath}/%{name}-root
 BuildRequires:	x11-util-macros		>= 1.1.5
 BuildRequires:	libx11-devel		>= 1.1.3
 BuildRequires:	libxkbfile-devel	>= 1.0.4
+BuildRequires:	bison
 
 %description
 The xkbevd event daemon listens for specified XKB events and executes
