@@ -1,29 +1,20 @@
 Name:		xkbevd
 Version:	1.0.2
-Release:	%mkrel 5
+Release:	%mkrel 6
 Summary:	XKB event daemon
 Group:		Development/X11
-URL: http://xorg.freedesktop.org
-########################################################################
-# git clone git://git.mandriva.com/people/pcpa/xorg/app/xman xorg/app/xkbevd
-# cd xorg/app/xkbevd
-# git-archive --format=tar --prefix=xkbevd-1.0.2/ xkbevd-1_0_2 | bzip2 -9 > xkbevd-1.0.2.tar.bz2
-########################################################################
-Source:		%{name}-%{version}.tar.bz2
+URL:		http://xorg.freedesktop.org
+Source:		http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
 License:	MIT
-########################################################################
-# git-format-patch xkbevd-1_0_2..origin/mandriva
-Patch1: 0001-Rename-.cvsignore-to-.gitignore.patch
-Patch2: 0002-Add-to-.gitignore-to-skip-patch-emacs-droppings.patch
-Patch3: 0003-Add-all-option-to-allow-using-xkbdev-almost-as-xev.patch
-Patch4: 0004-Add-xkbdev.cf-default-configuration-file.patch
-########################################################################
 BuildRoot:	%{_tmppath}/%{name}-root
 
-BuildRequires:	x11-util-macros		>= 1.1.5
-BuildRequires:	libx11-devel		>= 1.1.3
-BuildRequires:	libxkbfile-devel	>= 1.0.4
+BuildRequires: libx11-devel >= 1.0.0
+BuildRequires: libxkbfile-devel >= 1.0.1
+BuildRequires: x11-util-macros >= 1.0.1
 BuildRequires:	bison
+
+Patch1: 0001-Add-all-option-to-allow-using-xkbdev-almost-as-xev.patch
+Patch2: 0002-Add-xkbdev.cf-default-configuration-file.patch
 
 %description
 The xkbevd event daemon listens for specified XKB events and executes
@@ -35,12 +26,9 @@ list of event specification/action pairs and/or variable definitions.
 
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
-%patch4 -p1
 
 %build
-autoreconf -ifs
-%configure	--x-includes=%{_includedir} \
+%configure2_5x	--x-includes=%{_includedir} \
 		--x-libraries=%{_libdir}
 
 %make
