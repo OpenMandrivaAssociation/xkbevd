@@ -1,6 +1,6 @@
 Name:		xkbevd
 Version:	1.0.2
-Release:	%mkrel 6
+Release:	%mkrel 7
 Summary:	XKB event daemon
 Group:		Development/X11
 URL:		http://xorg.freedesktop.org
