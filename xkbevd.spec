@@ -15,6 +15,7 @@ BuildRequires:	bison
 
 Patch1: 0001-Add-all-option-to-allow-using-xkbdev-almost-as-xev.patch
 Patch2: 0002-Add-xkbdev.cf-default-configuration-file.patch
+Patch3: xkbevd-1.0.2-format_string.patch
 
 %description
 The xkbevd event daemon listens for specified XKB events and executes
@@ -26,6 +27,7 @@ list of event specification/action pairs and/or variable definitions.
 
 %patch1 -p1
 %patch2 -p1
+%patch3 -p0
 
 %build
 %configure2_5x	--x-includes=%{_includedir} \
