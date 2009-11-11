@@ -1,6 +1,6 @@
 Name:		xkbevd
-Version:	1.0.2
-Release:	%mkrel 8
+Version:	1.1.0
+Release:	%mkrel 1
 Summary:	XKB event daemon
 Group:		Development/X11
 URL:		http://xorg.freedesktop.org
@@ -13,10 +13,6 @@ BuildRequires: libxkbfile-devel >= 1.0.1
 BuildRequires: x11-util-macros >= 1.0.1
 BuildRequires:	bison
 
-Patch1: 0001-Add-all-option-to-allow-using-xkbdev-almost-as-xev.patch
-Patch2: 0002-Add-xkbdev.cf-default-configuration-file.patch
-Patch3: xkbevd-1.0.2-format_string.patch
-
 %description
 The xkbevd event daemon listens for specified XKB events and executes
 requested commands if they occur. The configuration file consists of a
@@ -24,10 +20,6 @@ list of event specification/action pairs and/or variable definitions.
 
 %prep
 %setup -q -n %{name}-%{version}
-
-%patch1 -p1
-%patch2 -p1
-%patch3 -p0
 
 %build
 %configure2_5x	--x-includes=%{_includedir} \
