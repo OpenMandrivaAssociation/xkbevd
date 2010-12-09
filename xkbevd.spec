@@ -1,5 +1,5 @@
 Name:		xkbevd
-Version:	1.1.1
+Version:	1.1.2
 Release:	%mkrel 1
 Summary:	XKB event daemon
 Group:		Development/X11
