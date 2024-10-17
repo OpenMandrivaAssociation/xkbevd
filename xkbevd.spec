@@ -3,7 +3,7 @@ Version:	1.1.5
 Release:	2
 Summary:	XKB event daemon
 Group:		Development/X11
-URL:		http://xorg.freedesktop.org
+URL:		https://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.xz
 License:	MIT
 BuildRequires:	pkgconfig(xorg-macros)
